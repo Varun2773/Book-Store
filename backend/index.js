@@ -11,19 +11,19 @@ app.use(express.json());
 
 //midlewware for handling CORS POLICY
 //option 1
-// app.use(cors());
+app.use(cors());
 //option 2
-app.use(
-  cors({
-    origin: "http://localhost:5555",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["content-type"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:5555",
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["content-type"],
+//   })
+// );
 
 app.get("/", (request, response) => {
   console.log(request);
-  return response.status(234).send("welcome to mern stack ");
+  return response.status(234).send("welcome to mern stack book store project backend ");
 });
 
 app.use("/books", booksRoute);
